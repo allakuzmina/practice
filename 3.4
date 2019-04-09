@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+class vector
+{private:
+string name, startpoint,finalpoint;
+public:
+void messege ()
+{
+cout << "Информация о векторе: ";
+}
+void setDate(string date_name, string date_startpoint ,string date_finalpoint)
+{
+name = date_name;
+startpoint = date_startpoint;
+finalpoint = date_finalpoint;
+}
+void getDate(string name, string surname, string finalpoint)
+{
+cout  <<"Имя: " << name << " Начальная точка:" << startpoint <<" Конечная точка "<< finalpoint << endl;
+}
+};
+
+int main(int argc, char* argv[])
+{
+
+string name, startpoint,finalpoint;
+;
+cout << "введите иформацию\n";
+cout << " Имя: "; cin >> name ;
+cout << "Начальная точка: ";cin >> startpoint;
+cout << "Конечная точка: ";cin >> finalpoint;
+vector objvector ;
+objvector.messege();
+objvector.getDate(name, startpoint, finalpoint);
+return 0;
+}
