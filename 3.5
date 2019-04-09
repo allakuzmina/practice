@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+class library
+{private:
+string adress, book, genre,author,year;
+
+public:
+void messege ()
+{
+cout << "Информация о библиотеке: ";
+}
+void setDate(string date_adress,string date_book,string date_author, string date_name ,string date_genre,int  date_year)
+{
+adress = date_adress; 
+book = date_book;
+author = date_author;
+genre = date_genre;
+year = date_year;
+
+}
+void getDate(string adress,string book,string author, string name, string genre,int year)
+{
+cout  << "Адрес библиотеки:"<< adress << "Книга:"<< book << "Автор: " << author<<" Жанр: "<< genre <<"Год:"<<year<<endl;
+}
+};
+
+int main()
+{
+string author,name, genre;
+cout << "Введите иформацию\n";
+cout << "Адрес библиотеки: ";cin >> adress;
+cout << "Книга: ";cin >> book;
+cout << " Автор: "; cin >> author ;
+cout << "Жанр: ";cin >> genre;
+cout << "Год: ";cin >> year;
+book objbook ;
+objbook.messege();
+objbook.getDate(adress, book,author, genre,year);
+return 0;
+}
