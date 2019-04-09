@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+class stydentgroup
+{private:
+string name, surname, namegroup;
+public:
+void messege ()
+{
+cout << "Информация о студенте: ";
+}
+void setDate(string date_name, string date_surname ,int date_namegroup)
+{
+name = date_name;
+surname = date_surname;
+namegroup = date_namegroup;
+}
+void getDate(string name, string surname, int namegroup)
+{
+cout  <<"Имя: " << name << " Фамилия:" << surname <<" Номер группы "<< namegroup << endl;
+}
+};
+
+int main(int argc, char* argv[])
+{
+
+string name, surname;
+int namegroup;
+cout << "введите иформацию\n";
+cout << " Имя: "; cin >> name ;
+cout << "Фамилия: ";cin >> surname;
+cout << "Номер группы: ";cin >> namegroup;
+stydentgroup objstydentgroup ;
+objstydentgroup.messege();
+objstydentgroup.getDate(name, surname, namegroup);
+return 0;
+}
