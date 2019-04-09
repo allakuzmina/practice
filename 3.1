@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+class book
+{private:
+string author, name, genre;
+public:
+void messege ()
+{
+cout << "Информация о книге: ";
+}
+void setDate(string date_author, string date_name ,string date_genre)
+{
+author = date_author;
+name = date_name;
+genre = date_genre;
+}
+void getDate(string author, string name, string genre)
+{
+cout << "Автор: " << author << " Название:" << name <<" Жанр: "<< genre << endl;
+}
+};
+
+int main()
+{
+string author,name, genre;
+cout << "Введите иформацию\n";
+cout << " Автор: "; cin >> author ;
+cout << "Название: ";cin >> name;
+cout << "Жанр: ";cin >> genre;
+book objbook ;
+objbook.messege();
+objbook.getDate(author, name, genre);
+return 0;
+}
