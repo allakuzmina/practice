@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+class car
+{private:
+string name, model, year,color;
+public:
+void messege ()
+{
+cout << "Информация о автомобиле: ";
+}
+void setDate(string date_name, string date_model ,string date_color,int date_year)
+{
+name = date_name;
+model = date_model;
+color = date_color;
+year= date_year;
+}
+void getDate(string name, string model, string color,int year)
+{
+cout << "Название: " << name << " Модель:" << model <<" Год: "<< year <<"Цвет"<<color<< endl;
+}
+};
+
+int main(int argc, char* argv[])
+{
+string model,name, color;
+int year;
+cout << "Введите иформацию\n";
+cout << " Название: "; cin >> name ;
+cout << "Модель: ";cin >> model;
+cout << "Год: ";cin >> year;
+cout << "Цвет: ";cin >> color;
+  car objcar ;
+objcar.messege();
+objcar.getDate(name, model, color,year);
+return 0;
+}
