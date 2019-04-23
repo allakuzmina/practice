@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+  setlocale (0,"");
+    float t,y,a=3.5,x=-0.7;
+    if (a<=x) {   
+    y=a+log(x+a);}
+    else{    
+         y=sqrt( sin(a*x));}
+    if (a>y) {  
+             t=y/(a-x);}
+    else if (y==a) {
+      t=y/(a-x)+(x+a)/(y*y);}
+    else{ 
+      t=tan(a*x)+cos(2*a*y);} 
+    return 0;
+}
