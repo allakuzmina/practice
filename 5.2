@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+void sortirovka(int *, int);
+void sortirovka (float *, int);
+int main()
+{
+	int n; 
+	cout << "Количество элементов: ";
+	cin >> n;	
+  int* mass_i = new int[n];
+  float* mass_f = new float[n];
+for (int i = 0; i < n; i++)  
+  {
+    cout << i+1 << "-ый элемент: ";
+    cin >> mass_f[i]; 
+  } 
+	cout << "Исходный массив: ";
+	for(int i = 0; i < n; ++i)
+	{
+		cout << mass_f[i] << " ";
+	}
+  sortirovka(mass_f, n);
+	cout << endl;
+	cout << "Отсортированный массив: ";
+	for(int i = 0; i < n; ++i)
+	{
+	  cout << mass_f[i] << " ";
+	}
+	cout << endl;
+  delete [] mass_i;
+  delete [] mass_f;
+	return 0;
+}
+void sortirovka(int* Perestanovka, int length) {
+for (int j = 0; j < length; j++){
+int temp = Perestanovka[0]; 
+for (int z = j + 1; z < length; z++){
+if (Perestanovka[j] > Perestanovka[z]){
+temp = Perestanovka[j]; 
+Perestanovka[j] = Perestanovka[z];
+Perestanovka[z] = temp;
+}
+}
+}
+}
+void sortirovka(float* Perestanovka, int length) {
+for (int j = 0; j < length; j++){
+int temp = Perestanovka[0]; 
+for (int z = j + 1; z < length; z++){
+if (Perestanovka[j] > Perestanovka[z]){
+temp = Perestanovka[j]; 
+Perestanovka[j] = Perestanovka[z];
+Perestanovka[z] = temp;
+}
+}
+}
+}
+   
