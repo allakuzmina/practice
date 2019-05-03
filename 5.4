@@ -1,0 +1,81 @@
+#include <iostream>
+ 
+using namespace std;
+
+void calc(int a,int b,char znak);
+void сalc(double a, double b, char znak);
+void calc(double a, int b, char znak);
+void calc(int a, int b, char znak);
+
+int main(){
+char znak;
+int a1,b1;
+double a2,b2; 
+  cout << "Введите первое int число: ";
+    cin >> a1;
+   cout << "Введите  второе число int  : ";
+    cin >> b1;
+    cout << "Введите первое число double : ";
+    cin >> a2;
+    cout << "Введите второе число double : ";
+    cin >> b2;
+    cout << "Введите знак операции: ";
+    cin >> znak;
+    cout << "<int> " << a1 << " " << znak << " " << "<int> " << b1 << " = ";
+    calc(a1, b1, znak);
+    cout << "<double> " << a2 << " " << znak<< " " << "<int> " << b1 << " = ";
+    calc(a2, b1, znak);
+    cout << "<int> " << a1 << " " << znak << " " << "<double> " << b2 << " = ";
+  calc(a1, b2, znak);
+    cout << "<double> " << a2 << " " << znak << " " << "<double> " << b2 << " = ";
+   calc(a2, b2, znak);
+    return 0;
+}
+
+void calc(double a, double b, char znak)
+{
+    switch (znak)
+    {
+    case '+':cout << a + b << endl;break;
+    case '-':cout << a - b << endl;break;
+    case '/':cout << a / b << endl;break;
+    case '*':cout << a * b << endl;break;
+    default:cout << "Такой операции нет" << endl;break;
+    }
+}
+void calc(int a, double b, char znak)
+{
+    switch (znak)
+    {
+    case '+':cout << a + b << endl;break;
+    case '-':cout << a - b << endl;break;
+    case '/':cout << a / b << endl;break;
+    case '*':cout << a * b << endl;break;
+    default:cout << "Такой операции нет" << endl;break;
+    }
+}
+
+void calc(double a, int b, char znak)
+{
+    switch (znak)
+    {
+    case '+':cout << a + b << endl; break;
+    case '-':cout << a - b << endl;break;
+    case '/':cout << a / b << endl;break;
+    case '*':cout << a * b << endl;break;
+    default:cout << "Такой операции нет" << endl;break;
+    }
+}
+
+void calc(int a, int b, char znak)
+{
+    switch (znak)
+    {
+    case '+':cout << a + b << endl;
+        break;
+    case '-':cout << a - b << endl;break;
+    case '/':cout << a / b << endl;break;
+    case '*':cout << a * b << endl;break;
+    default:cout << "Такой операции нет!" << endl;break;
+    }
+}
