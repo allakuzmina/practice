@@ -1,0 +1,69 @@
+#include <iostream>
+
+using namespace std;
+
+void sortirovka(int *, int);
+void sortirovka (float *, int);
+
+int main()
+{
+	int n; 
+	cout << "Количество элементов: ";
+	cin >> n;	
+  int* mass_i = new int[n];
+  float* mass_f = new float[n];
+  for(int i = 0; i < n; ++i)
+  {
+    cout << i+1 << "-ый элемент: ";
+    cin >> mass_f[i]; 
+  } 
+	cout << "Исходный массив: ";
+	for(int i = 0; i < n; ++i)
+	{
+		cout << mass_f[i] << " ";
+	}
+  sortirovka(mass_f, n);
+	cout << endl;
+	cout << "Отсортированный массив: ";
+	for(int i = 0; i < n; ++i)
+	{
+	  cout << mass_f[i] << " ";
+	}
+	cout << endl;
+
+  delete [] mass_i;
+  delete [] mass_f;
+
+	return 0;
+}
+
+void sortirovka(int *mass, int n)
+{
+  for (int i = 1; i < n; ++i)
+	{
+    int temp=mass[i];
+		for (int j=i-1;  j >= 0; j--)
+		{
+			if (mass[j] < temp)
+      break;
+				mass[j+1] = mass[j];
+				mass[j] = temp;
+			
+		}
+	}
+}
+void sortirovka(float *mass, int n)
+{
+  for (int i = 1; i < n; ++i)
+	{
+    float temp=mass[i];
+		for (int j=i-1;  j >= 0; j--)
+		{
+			if (mass[j] < temp)
+      break;
+				mass[j+1] = mass[j];
+				mass[j] = temp;
+			
+		}
+	}
+}
