@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+ 
+double* memorymass(double* startPtr, int sizemass);
+void numbersmass(double* ptrArr, int sizemass);
+void showmass(double* ptrArr, int sizemass);
+double* freememory(double* ptrArr);
+
+int main()
+{
+ 
+ double* c = 0;
+ char userAnswer = 0;
+ do
+ {
+ int sizemass = 0;
+ cout << "Размер массива: ";
+ cin >> sizemass;
+ 
+ c = memorymass(c, sizemass);
+ numbersmass(c, sizemass);
+ showmass(c, sizemass);
+c = freememory(c);
+ 
+ cout << "\nПродолжить (1). Выйти (0): ";
+ cin >> userAnswer;
+ } while (userAnswer != '0');
+ 
+ return 0;
+}
+ 
+double* memorymass(double* ptrArr, int sizemass)
+{
+ ptrArr = new double[sizemass];
+ return ptrArr;
+}
+
+void numbersmass(double* ptrArr, int sizemass)
+{
+ for (int i = 0; i < sizemass; i++)
+ {
+ ptrArr[i] = (i + 1) ; 
+ }
+}
+
+void showmass(double* ptrArr, int sizemass)
+{
+ for (int i = 0; i < sizemass; i++)
+ {
+ cout << ptrArr[i] << "  ";
+ }
+ cout << endl;
+}
+
+double*  freememory(double* ptrArr)
+{
+ delete[] ptrArr;
+ ptrArr = 0;
+ return ptrArr;
+}
