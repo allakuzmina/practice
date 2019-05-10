@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+ 
+ 
+void sortirovka(int *mass, int size);
+ 
+int main()
+{
+    
+    int size = 12;
+    int *str = new int[size];
+    int n = 1;
+ 
+    for (int i = 0; i <= size - 1; i++)
+    {
+        str[i] = n;
+        n++;
+    }
+    sortirovka(str, size);
+    delete[] str;
+    system("pause >> void");
+    return 0;
+ 
+} 
+void sortirovka(int *mass, int size)
+{
+    int b, i;
+    bool c;
+    c = true;
+    for (i = 0; i <= size - 1;)
+    {
+        if ((mass[i] % 2 != 0) && (mass[i + 1] % 2 == 0))
+        {
+            b = mass[i];
+            mass[i] = mass[i + 1];
+            mass[i + 1] = b;
+            cout << mass[i] << '_' << mass[i + 1] << " ";
+            i = i + 2;
+            c = false;
+        }
+        if (c) i++;
+        
+        
+            
+    }
+}
