@@ -2,58 +2,55 @@
 #include <iostream>
 using namespace std;
  
-class vehicle
+class figura
 {
 protected:
     string name;
 public:
-    vehicle(string name): name(name){
+    figura(string name): name(name){
     }
     virtual void what() = 0;
     };
  
-class car : public vehicle
+class fourugol : protected figura
 {
 public:
-    car(string name) :vehicle(name){
+    fourugol(string name) : figura(name){
+    }
+     virtual void what()=0;
+    
+};
+ 
+class romb : public fourugol
+{
+public:
+    romb(string name) : fourugol(name){
     }
     void what() override
     {
-   cout << name << " car" << endl;
+    cout << name << " romb" << endl;
     }
 };
  
-class bus : public vehicle
+class pryamougol : public fourugol
 {
 public:
-    bus(string name) : vehicle(name){
-    }
-    void what() override
-    {
-    cout << name << " bus" << endl;
-    }
-};
- 
-class bicycle: public vehicle
-{
-public:
-    bicycle(string name) : vehicle(name){
+    pryamougol(string name) :fourugol(name){
     }
  
     void what() override
     {
-    cout << name << " bicycle " << endl;
+    cout << name << " pryamougol " << endl;
     }
 };
 int main()
 {
- vehicle * vehicle[3] = {
-new car("car"),
-new bus("bus"),
-new bicycle("bicycle") 
+fourugol * fourugols[2] = {
+new romb("romb"),
+new pryamougol("pryamougol") 
     };
- for (int i = 0; i < 3; ++i)
-vehicle[i]->what();
+ for (int i = 0; i < 2; ++i)
+fourugols[i]->what();
 system("pause"); 
 return 0;
 }
