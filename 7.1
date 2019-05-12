@@ -2,20 +2,20 @@
 #include <iostream>
 using namespace std;
  
-class Animal
+class animal
 {
 protected:
     string name;
 public:
-    Animal(string name): name(name){
+    animal(string name): name(name){
     }
     virtual void who() = 0;
     };
  
-class cat : public Animal
+class cat : public animal
 {
 public:
-    cat(string name) : Animal(name){
+    cat(string name) : animal(name){
     }
     void who() override
     {
@@ -23,10 +23,10 @@ public:
     }
 };
  
-class dog : public Animal
+class dog : public animal
 {
 public:
-    dog(string name) : Animal(name){
+    dog(string name) : animal(name){
     }
     void who() override
     {
@@ -34,10 +34,10 @@ public:
     }
 };
  
-class bird : public Animal
+class bird : public animal
 {
 public:
-    bird(string name) : Animal(name){
+    bird(string name) : animal(name){
     }
  
     void who() override
@@ -47,7 +47,7 @@ public:
 };
 int main()
 {
- Animal * animals[3] = {
+ animal * animals[3] = {
 new cat("cat"),
 new dog("dog"),
 new bird("bird") 
