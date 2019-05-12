@@ -1,0 +1,59 @@
+#include <string>
+#include <iostream>
+using namespace std;
+ 
+class Animal
+{
+protected:
+    string name;
+public:
+    Animal(string name): name(name){
+    }
+    virtual void who() = 0;
+    };
+ 
+class cat : public Animal
+{
+public:
+    cat(string name) : Animal(name){
+    }
+    void who() override
+    {
+   cout << name << " cat" << endl;
+    }
+};
+ 
+class dog : public Animal
+{
+public:
+    dog(string name) : Animal(name){
+    }
+    void who() override
+    {
+    cout << name << " dog" << endl;
+    }
+};
+ 
+class bird : public Animal
+{
+public:
+    bird(string name) : Animal(name){
+    }
+ 
+    void who() override
+    {
+    cout << name << " bird " << endl;
+    }
+};
+int main()
+{
+ Animal * animals[3] = {
+new cat("cat"),
+new dog("dog"),
+new bird("bird") 
+    };
+ for (int i = 0; i < 3; ++i)
+animals[i]->who();
+system("pause"); 
+return 0;
+}
