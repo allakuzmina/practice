@@ -1,0 +1,59 @@
+#include <string>
+#include <iostream>
+using namespace std;
+ 
+class vehicle
+{
+protected:
+    string name;
+public:
+    vehicle(string name): name(name){
+    }
+    virtual void what() = 0;
+    };
+ 
+class car : public vehicle
+{
+public:
+    car(string name) :vehicle(name){
+    }
+    void what() override
+    {
+   cout << name << " car" << endl;
+    }
+};
+ 
+class bus : public vehicle
+{
+public:
+    bus(string name) : vehicle(name){
+    }
+    void what() override
+    {
+    cout << name << " bus" << endl;
+    }
+};
+ 
+class bicycle: public vehicle
+{
+public:
+    bicycle(string name) : vehicle(name){
+    }
+ 
+    void what() override
+    {
+    cout << name << " bicycle " << endl;
+    }
+};
+int main()
+{
+ vehicle * vehicle[3] = {
+new car("car"),
+new bus("bus"),
+new bicycle("bicycle") 
+    };
+ for (int i = 0; i < 3; ++i)
+vehicle[i]->what();
+system("pause"); 
+return 0;
+}
