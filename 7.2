@@ -1,0 +1,59 @@
+#include <string>
+#include <iostream>
+using namespace std;
+ 
+class figura
+{
+protected:
+    string name;
+public:
+    figura(string name): name(name){
+    }
+    virtual void what() = 0;
+    };
+ 
+class fourugol : public figura
+{
+public:
+    fourugol(string name) : figura(name){
+    }
+    void what() override
+    {
+   cout << name << " figura" << endl;
+    }
+};
+ 
+class romb : public fourugol
+{
+public:
+    romb(string name) : fourugol(name){
+    }
+    void what() override
+    {
+    cout << name << " romb" << endl;
+    }
+};
+ 
+class pryamougol : public fourugol
+{
+public:
+    pryamougol(string name) :fourugol(name){
+    }
+ 
+    void what() override
+    {
+    cout << name << " pryamougol " << endl;
+    }
+};
+int main()
+{
+figura * figurs[3] = {
+new romb("romb"),
+new fourugol("fourugol"),
+new pryamougol("pryamougol") 
+    };
+ for (int i = 0; i < 3; ++i)
+figurs[i]->what();
+system("pause"); 
+return 0;
+}
